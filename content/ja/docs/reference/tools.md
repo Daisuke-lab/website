@@ -7,20 +7,33 @@ content_type: concept
 Kubernetesには、Kubernetesシステムの操作に役立ついくつかの組み込みツールが含まれています。
 
 <!-- body -->
-## Kubectl
-[`kubectl`](/ja/docs/tasks/tools/install-kubectl/)は、Kubernetesのためのコマンドラインツールです。このコマンドはKubernetes cluster managerを操作します。
+## crictl
 
-## Kubeadm
-[`kubeadm`](/ja/docs/setup/production-environment/tools/kubeadm/install-kubeadm/)は、物理サーバやクラウドサーバ、仮想マシン上にKubernetesクラスターを容易にプロビジョニングするためのコマンドラインツールです(現在はアルファ版です)。
+[`crictl`](https://github.com/kubernetes-sigs/cri-tools) は、{{<glossary_tooltip term_id="cri" text="CRI">}}と互換性のあるコンテナランタイムに使用可能な、調査・デバッグ用のためのコマンドラインツールです。
 
-## Minikube
-[`minikube`](https://minikube.sigs.k8s.io/docs/)は、開発やテストのためにワークステーション上でシングルノードのKubernetesクラスターをローカルで実行するツールです。
 
 ## Dashboard
 [`Dashboard`](/ja/docs/tasks/access-application-cluster/web-ui-dashboard/)は、KubernetesのWebベースのユーザインターフェースで、コンテナ化されたアプリケーションをKubernetesクラスターにデプロイしたり、トラブルシューティングしたり、クラスターとそのリソース自体を管理したりすることが出来ます。
 
+## Headlamp
+
+[`Headlamp`](https://headlamp.dev/)は、拡張可能なKubernetesのグラフィカルユーザーインターフェース（GUI）であり、Kubernetes クラスタのオプションコンポーネントです。
+Headlampは、Kubernetesプロジェクトの一部となっています。
+
+Headlampを用いて以下のことを行います。
+
+* クラスター管理そしてトラブルシューティングのための最新の扱いやすいGUI
+
+* クラスタ内へのデプロイおよびデスクトップアプリケーションの両方に対応
+
+* プラグインシステムによる拡張性
+
+* ユーザーの権限に応じて動的に適用される RBACベースのアクセス制御
+
+
+
 ## Helm
-[`Kubernetes Helm`](https://github.com/helm/helm)は、事前に設定されたKubernetesリソースのパッケージ、別名Kubernetes chartsを管理するためのツールです。
+[`Helm`](https://github.com/helm/helm)は、事前に設定されたKubernetesリソースのパッケージ、別名Kubernetes chartsを管理するためのツールです。
 
 Helmを用いて以下のことを行います。
 
@@ -44,3 +57,25 @@ Komposeを用いて以下のことを行います。
 * ローカルのDocker開発からKubernetesを経由したアプリケーション管理への移行
 
 * v1またはv2のDocker Compose用 `yaml` ファイルならびに[分散されたアプリケーションバンドル](https://docs.docker.com/compose/bundles/)の変換
+
+
+## Kui
+[`Kui`](https://github.com/kubernetes-sigs/kui) は、`kubectl` で送受信されるリクエスト、レスポンスをGUIで操作できるツールです。
+
+`kubectl`の出力ASCIIテーブルの代わりに、ユーザがソート出来るテーブルをGUI上で描写します。
+
+Kuiを用いて以下のことを行います。
+
+* コピーペーストすることなく、自動生成された冗長なリソース名を直接クリックして確認
+
+* Kui上で`kubectl`を実行可能で、時折`kubectl`そのものよりも早いパフォーマンスを発揮
+
+* {{< glossary_tooltip text="Job" term_id="job">}}をクエリし、実行を滝グラフで確認
+
+* タブを使用し、クラスター内の様々なリソースをクリックして確認
+
+
+## Minikube
+[`minikube`](https://minikube.sigs.k8s.io/docs/)は、開発やテストのためにワークステーション上でシングルノードのKubernetesクラスターをローカルで実行するツールです。
+
+
